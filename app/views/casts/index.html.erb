@@ -1,21 +1,81 @@
-<% title "Casts" %>
+<% title "Screamasts.com" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Resource</th>
-  </tr>
-  <% for cast in @casts %>
+<h2>Damn good learning pills. From the fucking masters. Coming to you soon...</h2>
+
+<div class="retweet" style="float:right">
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+</div>
+
+<div class="section">
+  <h3>Screamcasts are about authors</h3>
+
+  <p>Are you a Rails whiz? A die-hard Erlang user? Willing to spread your love about that JS framework?<br/>
+  Unleash your expertise and let <b>hot girls</b> follow you and your tutorials!</p>
+</div>
+
+<div class="section">
+  <h3>We like...</h3>
+  <ul>
+    <li><b>Attitude</b>! Learning should be fun.</li>
+    <li><b>Bleeding edge tech</b>! Take the community to the next level.</li>
+    <li><b>Involvement</b>! Show, teach and troubleshoot.</li>
+  </ul>
+</div>
+
+<% how_many = @casts.size %>  
+
+<div class="section" id="screamcasts">
+  <h3>We have <%= how_many %> screamcasts</h3>
+  <table>
     <tr>
-      <td><%=h cast.name %></td>
-      <td><%=h cast.description %></td>
-      <td><%=h cast.resource %></td>
-      <td><%= link_to "Show", cast %></td>
-      <td><%= link_to "Edit", edit_cast_path(cast) %></td>
-      <td><%= link_to "Destroy", cast, :confirm => 'Are you sure?', :method => :delete %></td>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Resource</th>
     </tr>
-  <% end %>
-</table>
+    <% for cast in @casts %>
+      <tr>
+        <td><%=h cast.name %></td>
+        <td><%=h cast.description %></td>
+        <td><%=h cast.resource %></td>
+        <td><%= link_to "Show", cast %></td>
+        <td><%= link_to "Edit", edit_cast_path(cast) %></td>
+        <td><%= link_to "Destroy", cast, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
-<p><%= link_to "New Cast", new_cast_path %></p>
+<div class="section">
+  <h3><%= link_to "Submit a screamcast", new_cast_path %></h3>
+  <p>Screamcasts is now accepting video tutorials on any programming subject:
+    Rails, Unix, MySQL, Scala, Erlang, Java, Prototype, Dojo, jQuery...</p>
+  <p>If you are ready, send us an email with your proposal!
+    <%= mail_to "pablo@teambox.com", "pablo@teambox.com" %></p>
+  <h3>A screamcast must:</h3>
+  <ul>
+    <li>Cover a specific field in depth. <i>How to write unobtrusive Prototype, or your first app for Android.</i></li>
+    <li>Be less than 15 minutes long and at least 640x480px resolution.</li>
+    <li>Don't simply guide people following your mouse. Explain concepts and use slides for extra clarity.</li>
+    <li>Start the video <b>screaming</b> as hard as you can.</li>
+    <li>Provide demo files so your users can play with them.</li>
+    <li>Be in plain english. If that's hard for you, we know some good voice talents.</li>
+  </ul>
+  <h3>As a screamcaster, you will</h3>
+  <ul>
+    <li>Have his profile page in Screamcasts.</li>
+    <li>Have full access to his tutorials (video or pdf).</li>
+    <li>Be able to view stats for each of his items.</li>
+    <li>Get free hosting for your files.</li>
+  </ul>
+  
+<div class="section">
+  <h3>Get notified when we launch!</h3>
+  <form class="subscribe" action="http://teambox.createsend.com/t/r/s/iyjuly/" method="post">
+  <div class="field">
+  <label for="name">Name:</label><br /><input type="text" name="cm-name" id="name" />
+  </div>
+  <div class="field">
+  <label for="iyjuly-iyjuly">Email:</label><br /><input type="text" name="cm-iyjuly-iyjuly" id="iyjuly-iyjuly" />
+  <input type="submit" value="Subscribe" />
+  </form>
+</div>
