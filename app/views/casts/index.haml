@@ -1,0 +1,82 @@
+- title "Screamasts.com"
+
+%h2
+  Damn good learning pills. From the fucking masters. Coming to you soon...
+
+.retweet{ :style => 'float:right' }
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+
+.section
+  %h3
+    Screamcasts are about authors
+  %p
+    Are you a Rails whiz? A die-hard Erlang user? Willing to spread your love about that JS framework?
+    %br
+    Unleash your expertise and let <b>hot girls</b> follow you and your tutorials!
+
+.section    
+  %h3
+    We like...
+  %ul
+    %li <b>Attitude</b>! Learning should be fun. 
+    %li <b>Bleeding edge tech</b>! Take the community to the next level.
+    %li <b>Involvement</b>! Show, teach and troubleshoot.
+
+- how_many = @casts.size
+
+.section#screamcasts
+  %h3
+    We have
+    = how_many
+    screamcasts
+
+  %table
+    %tr
+      %th Name
+      %th Description
+      %th Resource
+    - for cast in @casts
+      %tr
+        %td= cast.name
+        %td= cast.description
+        %td= cast.resource
+        %td= link_to "Show", cast
+        %td= link_to "Edit", edit_cast_path(cast)
+        %td= link_to "Destroy", cast, :confirm => 'Are you sure?', :method => :delete
+
+.section
+  %h3= link_to "Submit a screamcast", new_cast_path
+  %p
+    Screamcasts is now accepting video tutorials on any programming subject:
+    Rails, Unix, MySQL, Scala, Erlang, Java, Prototype, Dojo, jQuery...
+  %p 
+    If you are ready, send us an email with your proposal!
+    = mail_to "pablo@teambox.com", "pablo@teambox.com"
+    
+  %h3 A screamcast must:
+  %ul
+    %li Cover a specific field in depth. <i>For example: how to write unobtrusive Prototype, or your first app for Android.</i>
+    %li Be less than 15 minutes long and at least 640x480px resolution.
+    %li Don't simply guide people following your mouse. Explain concepts and use slides for extra clarity.
+    %li Start the video <b>screaming</b> as hard as you can.
+    %li Provide demo files so your users can play with them.
+    %li Be in plain english. If that's hard for you, we know some good voice talents.
+  %h3 As a screamcaster, you will
+  %ul
+    %li Have his profile page in Screamcasts.
+    %li Have full access to his tutorials (video or pdf).
+    %li Be able to view stats for each of his items.
+    %li Get free hosting for your files.
+    
+.section
+  %h3 Get notified when we launch!
+
+  <form class="subscribe" action="http://teambox.createsend.com/t/r/s/iyjuly/" method="post">
+  <div class="field">
+  <label for="name">Name:</label><br /><input type="text" name="cm-name" id="name" />
+  </div>
+  <div class="field">
+  <label for="iyjuly-iyjuly">Email:</label><br /><input type="text" name="cm-iyjuly-iyjuly" id="iyjuly-iyjuly" />
+  <input type="submit" value="Subscribe" />
+  </form>
+
